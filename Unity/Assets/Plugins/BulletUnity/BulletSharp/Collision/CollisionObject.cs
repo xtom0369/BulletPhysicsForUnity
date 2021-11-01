@@ -352,6 +352,9 @@ namespace BulletSharp
 
         public object UserObject { get; set; }
 
+		/// <summary>
+		/// 碰撞对象唯一标识
+		/// </summary>
 		public int UserIndex
 		{
 			get { return btCollisionObject_getUserIndex(_native); }

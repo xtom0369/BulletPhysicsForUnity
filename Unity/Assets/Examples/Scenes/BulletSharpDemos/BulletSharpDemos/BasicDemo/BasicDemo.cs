@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using BulletSharp;
 using BulletSharp.Math;
 using DemoFramework;
@@ -28,10 +28,11 @@ namespace BasicDemo
 
         protected override void OnInitializePhysics()
         {
-            // collision configuration contains default setup for memory, collision setup
+            // collision configuration contains default setup for memory , collision setup . Advanced users can create their own configuration.
             CollisionConf = new DefaultCollisionConfiguration();
             Dispatcher = new CollisionDispatcher(CollisionConf);
 
+            // DbvtBroadphase is a good general purpose broadphase . You can also try out Axis3Sweep.
             Broadphase = new DbvtBroadphase();
 
             World = new DiscreteDynamicsWorld(Dispatcher, Broadphase, null, CollisionConf);
